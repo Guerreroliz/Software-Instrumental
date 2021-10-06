@@ -1,0 +1,298 @@
+body {
+    margin: 0 3%;
+    background: black;
+    /*color fondo*/
+}
+/* Medida del cuadro principal*/
+#app {
+    width: 1200px;
+    margin: auto;
+    background: #EEE;
+}
+
+#console {
+    position:absolute;
+    top: 206px;
+    /*Posición arriba*/ 
+    /*cambié medidas de la consola*/
+    height: 180px;
+    width: 750px;
+    margin-left: 452px;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 4px solid rgb(121, 192, 0);
+    z-index: 30;
+    /*color barra consola*/
+}
+
+#waveCanvas {
+    height: 130px;
+    width: 736px;
+    white-space: nowrap;
+    overflow:middle;
+    overflow-x: hidden;
+    /*scroll onda wave, esto se refiere a la onda AMARILLAAAA*/
+}
+
+#messages {
+    height: 50px;
+    /*Este define el espacio de los mensajes consola*/
+    white-space: nowrap;
+    overflow: auto;
+    overflow-x: hidden;
+    color:rgb(121, 192, 0);
+    font-family: 'Times New Roman', Times, serif ;
+    font-size: 16pt;
+    /*diseño mensajes*/
+}
+/* Barra inicial*/
+#masterTools {
+    position: relative;
+    top: 0;
+    height: 200px;
+    width: 1200px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif ;
+    color: rgb(0, 0, 0);
+    /*Si coloco tamaño se dañan los iconos m y s*/
+    background: white;
+    border: 4px solid rgb(121, 192, 0);
+    z-index: 20;
+    /*color barra principal*/
+}
+#volume {
+    height: 42px;
+}
+
+button.mute, button.solo {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+    /*botones solo y mute*/
+}
+
+#songs {
+    text-align: center;
+}
+
+#trackControl {
+    float: left;
+    margin-top: 30px;
+    /*Baja la caja de tracks ojoooo*/
+    width: 378px; /* no tocar mide el ancho de la caja de tracks*/
+    overflow: hidden;
+    /*lista tracks*/
+}
+
+#tracks {
+    width: 100%;
+    margin-top: 2px;
+    /*ancho de la barra donde está el track*/
+}
+
+.trackBox {
+    vertical-align: middle;
+    margin-top: 0;
+    border: 4px solid rgb(121, 192, 0);
+    font-family: Georgia;
+    font-size: 16px;
+    color: rgb(251, 255, 34);
+    background: rgba(148, 146, 141, 0.952);
+    /*define borde de la caja track y alineación*/
+}
+
+#canvass {
+    margin-left: 376px;
+    /*Margen recuadro negro donde están flechas*/
+}
+
+#myCanvas {
+    background:white;
+    margin-top: 32px;
+    height: 422px; /*Medida De la caja donde están las ondas de los tracks*/
+    border: 4px solid rgb(121, 192, 0);
+    width: 824px;
+    margin-left: 2px ;
+    /*Ubicación del cuadro negro*/
+    /*Fondo recuadro negro donde están flechas*/
+    /*En ese recuadro negro están los tracks*/
+}
+
+/* Lo creé para colocar el titulo de tracks*/
+#name{  
+    position: absolute;
+    top:392px;
+    height: 40px;
+    width: 1202px;
+    text-align: center;
+    font-size: 14pt;
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+    background: white;
+    border: 4px solid rgb(121,192,0);
+    z-index: 10;
+    /*color barra principal*/
+}
+#scroll {
+    position: absolute;
+    top: 438px;  /*Sube la caja de tracks*/
+    width: 1202px;
+    background: black;
+    /*Define el recuadro gris sin contar los tracks*/
+}
+
+.styled-select select {
+    background: black;
+    background: transparent;
+    width: 240px;
+    padding: 5px;
+    font-size: 16px;
+    line-height:1;
+    border: 0;
+    border-radius: 2px;
+    height: 34px;
+    -webkit-appearance: none;
+}
+
+.styled-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    margin-left: 840px;
+    margin-top: -170px;
+    margin-bottom: auto;
+    background: url(../img/down_arrow_select.jpg) no-repeat right white;
+    border: 4px solid rgb(121, 192, 0);
+    /*Borde de la pestaña donde elijo la canción*/
+}
+
+button {
+    height: 62px;
+    width: 62px;
+    margin-top: -2px;
+    /*Botones de arriba, play, stop*/
+}
+
+#sound {
+    position: absolute;
+    margin-left: 28px;
+    margin-top: 28px;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color:rgb(0,123,62);
+    /*Cuando activo cambia de color la letra de la consola*/
+    cursor: default;
+    background: rgb(218, 170, 0);
+    border: 4px solid rgb(0,123,62);
+    border-bottom-color: transparent;
+    /*Color de fondo letras superior consola*/
+}
+
+.nav {
+    margin-bottom: 0;
+}
+
+a[data-toggle=tab] {
+    color: rgb(0,123,62);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+    text-decoration: none;
+    /*Color letras superior consola*/
+}
+/*Barra azul*/
+.pisteProgress {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
+    margin-bottom: 10px;
+    margin-left: -26px; /*Posición de la barra azul*/
+    height: 22px;       /*Grosor de barra*/
+    margin-top: 40px;
+    /*Ancho recuadro track*/
+}
+/*Esta es la caja del master Volumen*/
+#masterVolumen {
+    position: absolute;
+    top: 206px;
+    height: 180px;
+    width: 450px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 4px solid rgb(121, 192, 0);
+    z-index: 10;
+    /*color barra principal*/
+}
+/*Controlo la perilla de volumen*/
+
+.knobDiv {
+    float: right;
+    margin-top: 10px;
+}
+.activated {
+    color: green;
+    border: 4px solid green;
+ 
+    /*Las dos ultimas lineas de background las coloqué, si no borrar*/
+    /*Volumen horizontal degradado*/
+}
+
+.volumeSlider {
+    margin-left: 20px;
+    width: 170px;
+}
+/***** for sliders *****/
+
+body {
+    margin-left: 3%;
+}
+
+.touch {
+    width: 40%;
+}
+
+
+/*Nuevo Código*/
+/*Control de los sliders volumen*/
+input[type=range] {
+    outline: none;
+    padding: 0;
+    width: 300px;
+    height: 10px;
+    margin-top: -20px;
+    margin-left: 26px;
+    background-color: #dedede;
+    background-image: -webkit-gradient(linear, 70% 0%, 70% 100%, color-stop(0%, green), color-stop(100%, green));
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border: 0;
+    background: rgb(0, 0, 0);
+    border: 2px solid rgb(238, 232, 232);
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+  }
+
+
